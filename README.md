@@ -59,9 +59,10 @@ AllowedIPs = 10.0.0.5/24
 Make sure to allow the WireGuard port (51820 in this example) in the Hetzner firewall settings so it is reachable.
 
 Start WireGuard and enable it to start on boot:
+```
 sudo systemctl enable wg-quick@wg0
 sudo systemctl start wg-quick@wg0
-
+```
 ### 4. Configure the Fritzbox
 In this example, 192.168.77.0/24 is used as the Fritzbox address range. It is important to adjust this to the address range configured in your Fritzbox.
 
