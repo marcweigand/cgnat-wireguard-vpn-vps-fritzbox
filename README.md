@@ -45,15 +45,15 @@ AllowedIPs = 192.168.77.0/24
 
 [Peer]
 PublicKey = <client1_publickey>
-AllowedIPs = 10.0.0.3/32
+AllowedIPs = 10.0.0.3/24
 
 [Peer]
 PublicKey = <client2_publickey>
-AllowedIPs = 10.0.0.4/32
+AllowedIPs = 10.0.0.4/24
 
 [Peer]
 PublicKey = <client3_publickey>
-AllowedIPs = 10.0.0.5/32
+AllowedIPs = 10.0.0.5/24
 ```
 Make sure to allow the WireGuard port (51820 in this example) in the Hetzner firewall settings so it is reachable.
 
@@ -95,7 +95,7 @@ DNS = 10.0.0.1
 [Peer]
 PublicKey = <server_publickey>
 Endpoint = <server_ip>:51820
-AllowedIPs = 192.168.77.0/24, 10.0.0.1/32
+AllowedIPs = 192.168.77.0/24, 10.0.0.0/24
 PersistentKeepalive = 25
 ```
 Client 2 configuration file:
@@ -108,7 +108,7 @@ DNS = 10.0.0.1
 [Peer]
 PublicKey = <server_publickey>
 Endpoint = <server_ip>:51820
-AllowedIPs = 192.168.77.0/24, 10.0.0.1/32
+AllowedIPs = 192.168.77.0/24, 10.0.0.0/24
 PersistentKeepalive = 25
 ```
 Client 3 configuration file:
@@ -121,7 +121,7 @@ DNS = 10.0.0.1
 [Peer]
 PublicKey = <server_publickey>
 Endpoint = <server_ip>:51820
-AllowedIPs = 192.168.77.0/24, 10.0.0.1/32
+AllowedIPs = 192.168.77.0/24, 10.0.0.0/24
 PersistentKeepalive = 25
 ```
 ### 6. Network Routing and NAT on the Linux Server
@@ -186,15 +186,15 @@ AllowedIPs = 192.168.77.0/24
 
 [Peer]
 PublicKey = <client1_publickey>
-AllowedIPs = 10.0.0.3/32
+AllowedIPs = 10.0.0.3/24
 
 [Peer]
 PublicKey = <client2_publickey>
-AllowedIPs = 10.0.0.4/32
+AllowedIPs = 10.0.0.4/24
 
 [Peer]
 PublicKey = <client3_publickey>
-AllowedIPs = 10.0.0.5/32
+AllowedIPs = 10.0.0.5/24
 ```
 Achten Sie darauf, bei Hetzner die Firewall für den WireGuard Port (im Beispiel 51820) freizuschalten, damit dieser erreichbar ist.
 
@@ -238,7 +238,7 @@ DNS = 10.0.0.1
 [Peer]
 PublicKey = <server_publickey>
 Endpoint = <server_ip>:51820
-AllowedIPs = 192.168.77.0/24, 10.0.0.1/32
+AllowedIPs = 192.168.77.0/24, 10.0.0.0/24
 PersistentKeepalive = 25
 ```
 Client 2 Konfigurationsdatei:
@@ -251,7 +251,7 @@ DNS = 10.0.0.1
 [Peer]
 PublicKey = <server_publickey>
 Endpoint = <server_ip>:51820
-AllowedIPs = 192.168.77.0/24, 10.0.0.1/32
+AllowedIPs = 192.168.77.0/24, 10.0.0.0/24
 PersistentKeepalive = 25
 ```
 Client 3 Konfigurationsdatei:
@@ -264,7 +264,7 @@ DNS = 10.0.0.1
 [Peer]
 PublicKey = <server_publickey>
 Endpoint = <server_ip>:51820
-AllowedIPs = 192.168.77.0/24, 10.0.0.1/32
+AllowedIPs = 192.168.77.0/24, 10.0.0.0/24
 PersistentKeepalive = 25
 ```
 
