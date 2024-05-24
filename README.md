@@ -16,9 +16,10 @@ With a Vodafone cable connection or fiber connection from Deutsche Glasfaser, us
 Rent a cloud server (e.g., Hetzner CX11) and install Debian.
 
 ### 2. Install WireGuard on the Linux Server
+```
 sudo apt update
 sudo apt install wireguard
-
+```
 ### 3. WireGuard Configuration on the Linux Server
 The key pairs are stored in the directory where you run the command. Our example allows for up to 252 clients to be configured, but you're free to adjust the VPN network and netmask to your needs. Make sure you properly plan and size the VM as well as available bandwidth in that case.
 
