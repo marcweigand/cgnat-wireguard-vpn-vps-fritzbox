@@ -46,15 +46,15 @@ AllowedIPs = 192.168.77.0/24
 
 [Peer]
 PublicKey = <client1_publickey>
-AllowedIPs = 10.0.0.3/24
+AllowedIPs = 10.0.0.3/32
 
 [Peer]
 PublicKey = <client2_publickey>
-AllowedIPs = 10.0.0.4/24
+AllowedIPs = 10.0.0.4/32
 
 [Peer]
 PublicKey = <client3_publickey>
-AllowedIPs = 10.0.0.5/24
+AllowedIPs = 10.0.0.5/32
 ```
 Make sure to allow the WireGuard port (51820 in this example) in the Hetzner firewall settings so it is reachable.
 
@@ -84,6 +84,8 @@ When importing to the Fritzbox, it is important to define the correct IP address
 
 If you have already configured WireGuard connections on your Fritzbox, use the existing public key of your Fritzbox. Otherwise, you will get an error message. You can view the public (and private) WireGuard keys of your Fritzbox by selecting Internet > Permit Access > VPN (WireGuard) > Display WireGuard settings.
 
+Fun fact: You can add additional servers (clients) to this network to host services. As long as you're in your home network, you'll have access to those internal (VPN) IPs without having to start your Wireguard VPN, as the Fritzbox is going to route requests properly to through the tunnel.
+
 ### 5. Configure the Clients
 Create configuration files for each client. Those can be imported into the Wireguard client on the enduser device.
 
@@ -91,7 +93,7 @@ Client 1 configuration file:
 ```
 [Interface]
 PrivateKey = <client1_privatekey>
-Address = 10.0.0.3/24
+Address = 10.0.0.3/32
 DNS = 10.0.0.1
 
 [Peer]
@@ -104,7 +106,7 @@ Client 2 configuration file:
 ```
 [Interface]
 PrivateKey = <client2_privatekey>
-Address = 10.0.0.4/24
+Address = 10.0.0.4/32
 DNS = 10.0.0.1
 
 [Peer]
@@ -117,7 +119,7 @@ Client 3 configuration file:
 ```
 [Interface]
 PrivateKey = <client3_privatekey>
-Address = 10.0.0.5/24
+Address = 10.0.0.5/32
 DNS = 10.0.0.1
 
 [Peer]
@@ -188,15 +190,15 @@ AllowedIPs = 192.168.77.0/24
 
 [Peer]
 PublicKey = <client1_publickey>
-AllowedIPs = 10.0.0.3/24
+AllowedIPs = 10.0.0.3/32
 
 [Peer]
 PublicKey = <client2_publickey>
-AllowedIPs = 10.0.0.4/24
+AllowedIPs = 10.0.0.4/32
 
 [Peer]
 PublicKey = <client3_publickey>
-AllowedIPs = 10.0.0.5/24
+AllowedIPs = 10.0.0.5/32
 ```
 Achten Sie darauf, bei Hetzner die Firewall für den WireGuard Port (im Beispiel 51820) freizuschalten, damit dieser erreichbar ist.
 
@@ -227,6 +229,8 @@ Beim Import der Fritzbox ist wichtig, den richtigen IP-Adressbereich des VPN-Ber
 
 Wenn ihr bereits WireGuard Verbindungen konfiguriert habt, verwendet den bestehenden öffentlichen Schlüssel eurer Fritzbox. Andernfalls kommt es zu einer Fehlermeldung. Ihr könnt den öffentlichen (und auch den privaten) WireGuard Schlüssel eurer Fritzbox auslesen, indem ihr unter Internet > Freigaben > VPN (WireGuard) > WireGuard-Einstellungen anzeigen auswählt.
 
+Fun fact: Du kannst zusätzliche Server (Clients) zu diesem Netzwerk hinzufügen, um Dienste zu hosten. Solange du in deinem Heimnetzwerk bist, hast du Zugriff auf diese internen (VPN-)IPs, ohne dein WireGuard-VPN starten zu müssen, da die Fritzbox Anfragen ordnungsgemäß durch den Tunnel routet.
+
 ### 5. Clients konfigurieren
 Erstellen Sie Konfigurationsdateien für jeden Client. Diese können auf den Clients in Wireguard importiert werden.
 
@@ -234,7 +238,7 @@ Client 1 Konfigurationsdatei:
 ```
 [Interface]
 PrivateKey = <client_privatekey>
-Address = 10.0.0.3/24
+Address = 10.0.0.3/32
 DNS = 10.0.0.1
 
 [Peer]
@@ -247,7 +251,7 @@ Client 2 Konfigurationsdatei:
 ```
 [Interface]
 PrivateKey = <client2_privatekey>
-Address = 10.0.0.4/24
+Address = 10.0.0.4/32
 DNS = 10.0.0.1
 
 [Peer]
@@ -260,7 +264,7 @@ Client 3 Konfigurationsdatei:
 ```
 [Interface]
 PrivateKey = <client3_privatekey>
-Address = 10.0.0.5/24
+Address = 10.0.0.5/32
 DNS = 10.0.0.1
 
 [Peer]
